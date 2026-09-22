@@ -84,7 +84,7 @@
 <body>
 <div class="wrap">
 
-  <header>
+  <header id="brand">
     <img src="logo.svg" alt="一方院・旅宿 YI FANG STAY">
     <div class="rule"></div>
   </header>
@@ -186,11 +186,13 @@ function showHome(){
   $('#s-audio').pause();
   $('#stop').classList.add('hidden');
   $('#home').classList.remove('hidden');
+  $('#brand').classList.remove('hidden');   // 總覽才露出 logo
 }
 
 function renderStop(id){
   const s = DATA.stops.find(x => x.id === id);
   $('#home').classList.add('hidden');
+  $('#brand').classList.add('hidden');      // 站頁不放 logo，磚紅標頭直接接到最上面
   $('#stop').classList.remove('hidden');
   $('#s-tt').textContent = s.title;
   $('#s-en').textContent = s.en;
